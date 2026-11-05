@@ -2,7 +2,7 @@
 
 An interactive, reproducible research project built on **433,323 CDC BRFSS 2023 survey responses**.
 
-The Shiny app can run locally or be published with the included GitHub Pages workflow. Upstream: https://github.com/akshithaguthupa18-ctrl/heart-attack-risk-shiny · Contributor fork: https://github.com/Zeeshan1786/heart-attack-risk-shiny
+The Shiny app can run locally or be published with the included GitHub Pages workflow. Upstream: https://github.com/akshithaguthupa18-ctrl/heart-attack-risk-shiny Â· Contributor fork: https://github.com/Zeeshan1786/heart-attack-risk-shiny
 
 The main view preserves the health-input form and adds four reactive profile charts (age, BMI, fitted-term contributions and survey context). The app also contains a working prediction form, dataset explorer, missingness and variable dictionary, ROC and calibration plots, confusion matrix, subgroup evaluation and downloadable results. R and Shiny run in your browser through Shinylive/webR; the first load downloads the R runtime and can take a little time.
 
@@ -70,7 +70,7 @@ The low precision is important: most positive classifications at this threshold 
 
 ## Deployment and development
 
-GitHub Pages serves the `docs/` directory from `main`. To rebuild after changes, run `source('export.R')`, commit the changed `docs/` files, and push. All frontend, modelling and data files are independently editable. See [DATASET.md](DATASET.md) and [RESULTS.md](RESULTS.md) for details.
+The included GitHub Actions workflow tests the model, builds the browser app from `app.R` and `bundle.rds`, and deploys to Pages. In repository Settings > Pages, choose GitHub Actions. For local static serving, run `source('export.R')` and serve the generated `docs/` folder. Generated runtime assets are build artifacts. All frontend, modelling and data files are independently editable. See [DATASET.md](DATASET.md) and [RESULTS.md](RESULTS.md) for details.
 
 For conventional Shiny hosting, deploy this directory to shinyapps.io or Posit Connect, or use `docker build -t cardioscope .` and `docker run --rm -p 3838:3838 cardioscope`.
 
